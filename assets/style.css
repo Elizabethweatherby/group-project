@@ -2,17 +2,20 @@
   padding-top: 0 !important;
 }
 body {
-  background-color: black;
+  /* background-color: black; */
   margin: 0;
   padding: 0;
 }
 
 header {
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+
 }
 
 h1 {
+  background-color: black;
   color: white;
   font-weight: bold;
 }
