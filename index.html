@@ -2,53 +2,15 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuel Finder</title>
     <link rel="stylesheet" type="text/css"
-        href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.23.0/maps/maps.css" />
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+        href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css" />
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
 </head>
 
-<body>
-    <header>
-        <h1>Fuel Finder</h1>
-        <input>
-    </header>
-    <div class="image-block"></div>
-    <div class="content">
-        <div id='map' class='map'></div>
-        <section class="list-section">
-            <ol>
-                <li>
-                    <div class="grey-block"></div>
-                </li>
-                <li>
-                    <div class="grey-block"></div>
-                </li>
-                <li>
-                    <div class="grey-block"></div>
-                </li>
-            </ol>
-        </section>
-        <section class="button-section">
-            <button class="grey-button"></button>
-            <button class="grey-button"></button>
-            <button class="grey-button"></button>
-            <button class="grey-button"></button>
-        </section>
-    </div>
-    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
-    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.12/SearchBox-web.js"></script>
-    <script src="./assets/script.js"></script>
-
-    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/<version>/maps/maps-web.min.js"></script>
+<body style="width: 100vw height: 100vh;">
+    <div id="map" style="width: 100vw; height: 100vh;"></div>
     <script>
-        tt.setProductInfo("Fuel-Finder", "0.0.1")
-        tt.map({
+        var map = tt.map({
             key: "AtAM1lDPRKeXpA9gXH60pqycYvLoKQAm",
             container: "map",
         })
@@ -56,3 +18,4 @@
 </body>
 
 </html>
+<!-- teszt -->
