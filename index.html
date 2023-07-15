@@ -1,59 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <script src="https://kit.fontawesome.com/406d5b08c6.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css"
-        href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css" />
-    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
-    <link rel="stylesheet" href="./assets/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail Search</title>
 </head>
 
-<main>
-    <body>
-      <header>
-        <h1>Fuel Finder <i class="fa-solid fa-gas-pump"></i></h1>
-      </header>
-      <form action="" method="get" class="city-search"> 
-        <div class = "city-search">
-          <label for="city"><h2>Search a City or Zipcode:</h2></label> 
-            <input type="text" city="city" id="city">
-        </div>
-          <div class = "city-search">
-            <input type="submit" value = "search">
-      </form>
-      <div class="content">
-        <h3>Showing results within a 5-mile radius:</h3>
-    
-        <section class="list-section">
-          <ol>
-            <li><div class="grey-block"></div></li>
-            <li><div class="grey-block"></div></li>
-            <li><div class="grey-block"></div></li>
-          </ol>
-        </section>
-        <section class="button-section">
-          <button class="grey-button"></button>
-          <button class="grey-button"></button>
-          <button class="grey-button"></button>
-          <button class="grey-button"></button>
-        </section>
-      </div>
-    </body>
-    </main>
-    </html>
+<body>
+  <h1>Cocktail Search</h1>
 
+  <div>
+    <label for="searchInput">Search by alcohol:</label>
+    <input type="text" id="searchInput">
+    <button id="searchBtn">Search</button>
+  </div>
 
-<body style="width: 100vw height: 100vh;">
-    <div id="map" style="width: 100vw; height: 100vh;"></div>
-    <script>
-        var map = tt.map({
-            key: "AtAM1lDPRKeXpA9gXH60pqycYvLoKQAm",
-            container: "map",
-        })
-    </script>
-    <script src="./assets/script.js"></script>
+  <div id="cocktailList"></div>
+
+  <script></script>
 </body>
 
 </html>
