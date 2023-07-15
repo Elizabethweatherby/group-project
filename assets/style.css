@@ -1,6 +1,6 @@
-.navbar {
+/* .navbar {
     padding-top: 0 !important;
-}
+} */
 
 body {
     /* background-color: black; */
@@ -8,18 +8,18 @@ body {
     padding: 0;
 }
 
-header {
+/* header {
     display: flex;
     justify-content: space-between;
     background-color: black;
 
-}
+} */
 
-h1 {
+/* h1 {
   background-color: black;
   color: white;
   font-weight: bold;
-}
+} */
 
 .image-block {
   background-image: url('your-image.jpg');
@@ -44,11 +44,11 @@ ol {
   padding: 0;
 }
 
-.grey-block {
+/* .grey-block {
   background-color: grey;
   height: 100px;
   margin-bottom: 10px;
-}
+} */
 
 .button-section {
   flex-basis: 50%;
