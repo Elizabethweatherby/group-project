@@ -28,6 +28,7 @@
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         const cocktails = data.drinks;
         if (cocktails === null) {
           displayNoCocktailsFound();
