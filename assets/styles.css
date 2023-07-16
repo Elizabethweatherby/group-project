@@ -1,26 +1,21 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
 /* .navbar {
     padding-top: 0 !important;
 } */
 
 body {
-    /* background-color: black; */
     background-image: url(./cocktail.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
-
-/* header {
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-
-} */
-
-/* h1 {
-  background-color: black;
-  color: white;
-  font-weight: bold;
-} */
+#logo{
+  font-family:'Lugrasimo', cursive;;
+}
 
 .image-block {
   background-image: url('your-image.jpg');
@@ -44,13 +39,6 @@ ol {
   list-style-type: none;
   padding: 0;
 }
-
-/* .grey-block {
-  background-color: grey;
-  height: 100px;
-  margin-bottom: 10px;
-} */
-
 .button-section {
   flex-basis: 50%;
   display: flex;
