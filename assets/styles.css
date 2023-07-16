@@ -5,19 +5,20 @@
 /* .navbar {
     padding-top: 0 !important;
 } */
-
 body {
     background-image: url(./cocktail.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
-    padding: 0;
+    background-position: center;
+    height: 100vh;
+    /* margin: 0;
+    padding: 0; */
 }
 #logo{
   font-family:'Lugrasimo', cursive;;
 }
 
-.image-block {
+/* .image-block {
   background-image: url('your-image.jpg');
   background-size: cover;
   background-position: center;
@@ -52,4 +53,4 @@ ol {
   width: 100px;
   height: 40px;
   margin: 10px;
-}
+} */
