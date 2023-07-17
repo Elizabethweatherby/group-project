@@ -8,25 +8,65 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
   <title>Cocktailpedia</title>
 </head>
 
 <body>
-  <header class="mt-20">
-    <!-- <div class="text-white flex flex-row-reverse mt-6">Find Locations Near me ></div> -->
-    <nav class="nav flex justify-between mt-3 mx-8">
-      <h1 id='logo' class="text-white text-5xl">Cocktailpedia</h1>
-      <form class="flex text-2xl bg-secondary bg-opacity-25 bg-transperant p-6 space-x-4">
-        <h2 class="text-white ">Find Recipes</h2>
-        <label class="text-white" form="searchInput"></label>
-        <input type="text" id="searchInput" class="rounded-3xl" placeholder=" search by alcohol">
-        <button class="text-white" id="searchBtn">Search</button>
-      </form>
-    </nav>
-  </header>
-  <div id="cocktailList"></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <section id="top-section">
+    <header class="">
+      <!-- <div class="text-white flex flex-row-reverse mt-6">Find Locations Near me ></div> -->
+      <nav class="nav flex justify-between mt-3 mx-8">
+        <h1 id='logo' class="text-white text-5xl">Cocktailpedia</h1>
+        <form class="flex text-2xl bg-secondary bg-opacity-25 bg-transperant p-6 space-x-4">
+          <h2 class="text-white ">Find Recipes</h2>
+          <label class="text-white" form="searchInput"></label>
+          <input type="text" id="searchInput" class="rounded-3xl" placeholder=" search by alcohol">
+          <button class="text-white" id="searchBtn">Search</button>
+        </form>
+      </nav>
+    </header>
+  </section>
+  <section id="bottom-section">
+    <div id="cocktailList">
+      <div class="drinks mb-4 p-4 bg-gray-100 rounded">
+        <h3 class="text-lg font-bold mb-2">Margarita</h3>
+        <p class="font-bold mb-1">Testing ingredients title</p>
+        <ul class="mb-2">
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+        </ul>
+      </div>
+
+      <div class="drinks bg-gray-100 rounded">
+        <h3 class="text-lg font-bold mb-2">Margarita</h3>
+        <p class="font-bold mb-1">Testing ingredients title</p>
+        <ul class="mb-2">
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+        </ul>
+      </div>
+
+      <div class="drinks mb-4 p-4 bg-gray-100 rounded">
+        <h3 class="text-lg font-bold mb-2">Margarita</h3>
+        <p class="font-bold mb-1">Testing ingredients title</p>
+        <ul class="mb-2">
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+          <li>ingredients</li>
+        </ul>
+      </div>
+    </div>
+  </section>
   <script src="./assets/script.js"></script>
 </body>
 

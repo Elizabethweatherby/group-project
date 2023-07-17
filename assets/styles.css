@@ -1,56 +1,33 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; */
-/* .navbar {
-    padding-top: 0 !important;
-} */
+
 body {
     background-image: url(./cocktail.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    /* margin: 0;
-    padding: 0; */
+    width: 100vw; */
+    margin: 0;
+    padding: 0;
 }
 #logo{
   font-family:'Lugrasimo', cursive;;
 }
-
-/* .image-block {
-  background-image: url('your-image.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
+#top-section{
+  height: 100vh;
 }
-
-.content {
+#bottom-section{
+  width: 100%;
+  background-color: black;
+}
+#cocktailList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
-
-.list-section {
-  flex-basis: 50%;
-  padding: 20px;
+.drinks {
+  width: calc(50% - 1rem);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f7fafc;
+  border-radius: 0.5rem;
 }
-
-ol {
-  list-style-type: none;
-  padding: 0;
-}
-.button-section {
-  flex-basis: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.grey-button {
-  background-color: grey;
-  width: 100px;
-  height: 40px;
-  margin: 10px;
-} */
