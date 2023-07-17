@@ -20,7 +20,7 @@
    
 //    Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
    
-   
+const apiUrl = `https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=margarita`;
    
    
    // Function to fetch cocktail details by name
