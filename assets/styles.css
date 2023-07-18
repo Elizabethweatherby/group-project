@@ -1,4 +1,4 @@
-
+@import url('path/to/roboto.css');
 body {
     background-image: url(./images/cocktail.jpeg);
     background-repeat: no-repeat;
@@ -12,6 +12,7 @@ body {
 #logo{
   font-family:'Lugrasimo', cursive;;
 }
+
 input{
   margin-left: 10px;
 }
@@ -40,7 +41,8 @@ h2,ul{
 
 .drink-card {
   display: flex;
-  width: calc(50% - 1rem);
+  /* width: calc(50% - 1rem); */
+  width: 100%;
   margin-bottom: 2rem;
   padding: 1rem;
   background-color: #f7fafc;
@@ -89,12 +91,12 @@ h2,ul{
   .drink-card{
     flex-direction: column-reverse;
   }
-  .drink-image img {
+  /* .drink-image img {
     position: absolute;
     left: 400px;
     height: 25%;
     width: 40%;
-  } 
+  }  */
 }
 .dropdown {
   position: relative;
