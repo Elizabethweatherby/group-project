@@ -60,3 +60,43 @@ h2{
   width: 100%;
   height: auto;
 } 
+
+/* this makes the cards the same as the lg version just more for small screens */
+/* @media (max-width: 640px){
+  .drink-card {
+    flex-direction: row;
+  }
+
+  .drink-info, .drink-image {
+    width: 50%;
+    height: auto;
+  }
+
+  .drink-image {
+    padding-bottom: 0;
+  }
+} */
+@media (max-width:640px) {
+  nav{
+    flex-direction: column;
+  }
+  .drink-card{
+    flex-direction: column-reverse;
+  }
+}
+/* @media (min-width:769px) and (max-width:900px) {
+  nav{
+    flex-direction: column;
+  }
+} */
+@media (min-width:640px) and (max-width: 769px) {
+  .drink-card{
+    flex-direction: column-reverse;
+  }
+  .drink-image img {
+    position: absolute;
+    left: 400px;
+    height: 25%;
+    width: 40%;
+  } 
+}
