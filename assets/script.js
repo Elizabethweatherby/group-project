@@ -72,9 +72,27 @@ function searchCocktails(event) {
         const cardDetail = createRandomCard(drink);
         document.getElementById('bottom-section').appendChild(cardDetail);
       })})
-    .catch(error => {
-      console.error(error);
-    });
+      .catch(error => {
+        showModal('Error', error.message);
+      });
+}
+
+// Function to show the modal
+function showModal(title, message) {
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+
+  modalTitle.textContent = title;
+  modalBody.textContent = message;
+
+  modal.classList.remove('hidden');
+}
+
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.add('hidden');
 }
 // this gets fetches the data from all 3 at the same time
 Promise.all([
@@ -114,7 +132,7 @@ Promise.all([
   })
   //displays errors to console
   .catch(error => {
-    console.error(error);
+    cshowModal('Error', error.message);
   });
 
 

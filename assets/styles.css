@@ -10,7 +10,7 @@
     padding: 0;
     transition: background-image 0.5s ease-in-out;
 }
-#next-button-right {
+/* #next-button-right {
   position: fixed;
   top: 50%;
   right: 20px;
@@ -21,7 +21,7 @@
   cursor: pointer;
   font-size: 24px;
   color: #000;
-}
+} */
 
 #logo{
   font-family:'Lugrasimo', cursive;;
