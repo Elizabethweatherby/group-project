@@ -15,7 +15,7 @@ body {
 input{
   margin-left: 10px;
 }
-h2{
+h2,ul{
   font-family: 'Oswald', sans-serif;
 }
 .divider{
@@ -84,11 +84,7 @@ h2{
     flex-direction: column-reverse;
   }
 }
-/* @media (min-width:769px) and (max-width:900px) {
-  nav{
-    flex-direction: column;
-  }
-} */
+
 @media (min-width:640px) and (max-width: 769px) {
   .drink-card{
     flex-direction: column-reverse;
@@ -100,3 +96,39 @@ h2{
     width: 40%;
   } 
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  font-size: 2xl;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(94, 87, 87);
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-content ul li {
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
