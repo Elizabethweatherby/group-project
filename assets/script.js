@@ -22,6 +22,36 @@ let popularDrinkList = document.getElementById('popularDrinks');
 let latestDrinkList = document.getElementById('latestDrinks');
 let randomDrinkList = document.getElementById('randomDrinks');
 ////////////////////////////////////////////////////////////////////////////////////
+//Define an array of image URLs
+const images = [
+  './assets/images/carosel/delish-mai-tai.jpg',
+  './assets/images/carosel/cocktail-cherry.jpg',
+  './assets/images/carosel/cocktail.jpg',
+  './assets/images/carosel/blue.jpg',
+  './assets/images/carosel/pexels.jpg'
+];
+
+
+
+const backgroundImage = document.querySelector(".background-image");
+const nextButtonRight = document.getElementById("next-button-right");
+
+let currentIndex = 0;
+
+function changeBackgroundImage() {
+  backgroundImage.style.backgroundImage = `url(${images[currentIndex]})`;
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  changeBackgroundImage();
+}
+
+nextButtonRight.addEventListener("click", nextImage);
+
+
+// Call the function initially
+changeBackgroundImage();
 
 // Event listener for the search button click
 const searchForm = document.getElementById('searchForm');
@@ -41,11 +71,36 @@ function searchCocktails(event) {
       data.drinks.forEach(drink => {
         const cardDetail = createRandomCard(drink);
         document.getElementById('bottom-section').appendChild(cardDetail);
+
+      })})
+      .catch(error => {
+        showModal('Error', error.message);
+      });
+}
+
+// Function to show the modal
+function showModal(title, message) {
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+
+  modalTitle.textContent = title;
+  modalBody.textContent = message;
+
+  modal.classList.remove('hidden');
+}
+
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.add('hidden');
+
       })
     })
     .catch(error => {
       showModal('Error', error.message);
     });
+
 }
 
 // Function to show the modal

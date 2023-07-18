@@ -1,14 +1,28 @@
-@import url('path/to/roboto.css');
-body {
-    background-image: url(./images/cocktail.jpeg);
+
+.background-image {
+    /* background-image: url(./images/carosel/delish-mai-tai.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: 100vw; */
+    width: 100vw;
     margin: 0;
     padding: 0;
+    transition: background-image 0.5s ease-in-out;
 }
+/* #next-button-right {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #000;
+} */
+
 #logo{
   font-family:'Lugrasimo', cursive;;
 }
