@@ -144,3 +144,74 @@ function displayCocktails(cocktails) {
 // Event listener for the search button click
 const searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', searchCocktails);
+
+
+   <!-- <div id="cocktailList" class="md:flex flex-wrap md:flex-row sm:flex-col justify-between">
+      <div class="drink-card mb-4 p-4 bg-gray-100 rounded flex justify-between">
+        <div class="drink-info">
+          <h3 class="text-lg font-bold mb-2">Margarita</h3>
+          <p class="font-bold mb-1">Testing ingredients title</p>
+          <ul class="mb-2">
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+          </ul>
+        </div>
+        <div class="drink-image">
+          <img src="./assets/images/margarita image.jpg" alt="Margarita" class="w-full h-auto">
+        </div>
+      </div>
+
+
+      <div class="drink-card mb-4 p-4 bg-gray-100 rounded">
+        <div class="drink-info">
+          <h3 class="text-lg font-bold mb-2">Margarita</h3>
+          <p class="font-bold mb-1">Testing ingredients title</p>
+          <ul class="mb-2">
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+          </ul>
+        </div>
+        <div class="drink-image">
+          <img src="./assets/images/margarita image.jpg" alt="Margarita">
+        </div>
+      </div>
+
+      <div class="drink-card mb-4 p-4 bg-gray-100 rounded">
+        <div class="drink-info">
+          <h3 class="text-lg font-bold mb-2">Margarita</h3>
+          <p class="font-bold mb-1">Testing ingredients title</p>
+          <ul class="mb-2">
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+          </ul>
+        </div>
+        <div class="drink-image">
+          <img src="./assets/images/margarita image.jpg" alt="Margarita">
+        </div>
+      </div>
+
+      <div class="drink-card mb-4 p-4 bg-gray-100 rounded">
+        <div class="drink-info">
+          <h3 class="text-lg font-bold mb-2">Margarita</h3>
+          <p class="font-bold mb-1">Testing ingredients title</p>
+          <ul class="mb-2">
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+            <li>ingredients</li>
+          </ul>
+        </div>
+        <div class="drink-image">
+          <img src="./assets/images/margarita image.jpg" alt="Margarita">
+        </div>
+      </div> -->

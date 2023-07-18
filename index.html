@@ -12,15 +12,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <title>Cocktailpedia</title>
 </head>
 
 <body>
+  <!-- this section is for navigation -->
   <section id="top-section">
-    <nav class="nav flex lg:flex-row md:flex-col sm:flex-col ls:flex-col md:justify-between items-center mt-3 ml-2 bg-gray-500 bg-opacity-50 fixed w-full top-0 z-50">
+    <!-- essentially the nav bar should be fixed top the top and houses the dropdown menus for the drinks -->
+    <nav
+      class="nav flex lg:flex-row md:flex-col sm:flex-col ls:flex-col md:justify-between items-center mt-3 ml-2 bg-gray-500 bg-opacity-50 fixed w-full top-0 z-50">
       <h1 id='logo' class="text-white md:text-5xl sm:text-2xl sm:pt-3">Cocktailpedia</h1>
       <form id="searchForm" class="flex text-2xl bg-secondary bg-opacity-25 space-x-4 p-6 items-center">
         <div class="text-white flex gap-x-3">
+          <!-- first dropdown -->
           <div class="dropdown">
             <button class="dropbtn">Popular <i class="caret fa-solid fa-caret-down" style="color: white;"></i></button>
             <div class="dropdown-content">
@@ -28,6 +35,7 @@
               </ul>
             </div>
           </div>
+          <!-- second dropdown -->
           <div class="dropdown">
             <button class="dropbtn">Latest <i class="fa-solid fa-caret-down" style="color: white;"></i></button>
             <div class="dropdown-content">
@@ -36,6 +44,7 @@
               </ul>
             </div>
           </div>
+          <!-- third dropdown -->
           <div class="dropdown">
             <button class="dropbtn">Not sure? <i class="fa-solid fa-caret-down" style="color: white;"></i></button>
             <div class="dropdown-content">
@@ -45,81 +54,14 @@
             </div>
           </div>
         </div>
-        <input type="text" id="searchInput" class="rounded-3xl p-2" placeholder="search by ingredient">
+        <input type="text" id="searchInput" class="rounded-3xl p-2" placeholder="search by keyword ">
       </form>
     </nav>
   </section>
+  <!-- the bottom section stores random drinks -->
   <section id="bottom-section">
     <div class="divider">Some recipies</div>
-    <div id="cocktailList" class="md:flex flex-wrap md:flex-row sm:flex-col justify-between">
-      <div class="drink-card mb-4 p-4 bg-gray-100 rounded flex justify-between">
-        <div class="drink-info">
-          <h3 class="text-lg font-bold mb-2">Margarita</h3>
-          <p class="font-bold mb-1">Testing ingredients title</p>
-          <ul class="mb-2">
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-          </ul>
-        </div>
-        <div class="drink-image">
-          <img src="./assets/images/margarita image.jpg" alt="Margarita" class="w-full h-auto">
-        </div>
-      </div>
-
-
-      <div class="drink-card mb-4 p-4 bg-gray-100 rounded">
-        <div class="drink-info">
-          <h3 class="text-lg font-bold mb-2">Margarita</h3>
-          <p class="font-bold mb-1">Testing ingredients title</p>
-          <ul class="mb-2">
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-          </ul>
-        </div>
-        <div class="drink-image">
-          <img src="./assets/images/margarita image.jpg" alt="Margarita">
-        </div>
-      </div>
-
-      <div class="drink-card mb-4 p-4 bg-gray-100 rounded">
-        <div class="drink-info">
-          <h3 class="text-lg font-bold mb-2">Margarita</h3>
-          <p class="font-bold mb-1">Testing ingredients title</p>
-          <ul class="mb-2">
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-          </ul>
-        </div>
-        <div class="drink-image">
-          <img src="./assets/images/margarita image.jpg" alt="Margarita">
-        </div>
-      </div>
-
-      <div class="drink-card mb-4 p-4 bg-gray-100 rounded">
-        <div class="drink-info">
-          <h3 class="text-lg font-bold mb-2">Margarita</h3>
-          <p class="font-bold mb-1">Testing ingredients title</p>
-          <ul class="mb-2">
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-            <li>ingredients</li>
-          </ul>
-        </div>
-        <div class="drink-image">
-          <img src="./assets/images/margarita image.jpg" alt="Margarita">
-        </div>
-      </div>
+    <!-- the cards for random drinks will go here -->
   </section>
   <script src="https://kit.fontawesome.com/9cca718ac3.js" crossorigin="anonymous"></script>
   <script src="./assets/script.js"></script>
