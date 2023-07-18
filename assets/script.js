@@ -72,10 +72,11 @@ function searchCocktails(event) {
         const cardDetail = createRandomCard(drink);
         document.getElementById('bottom-section').appendChild(cardDetail);
 
-      })})
-      .catch(error => {
-        showModal('Error', error.message);
-      });
+      })
+    })
+    .catch(error => {
+      showModal('Error', error.message);
+    });
 }
 
 // Function to show the modal
@@ -94,13 +95,6 @@ function showModal(title, message) {
 function closeModal() {
   const modal = document.getElementById('modal');
   modal.classList.add('hidden');
-
-      })
-    })
-    .catch(error => {
-      showModal('Error', error.message);
-    });
-
 }
 
 // Function to show the modal
