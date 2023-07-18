@@ -34,7 +34,8 @@ function fetchCocktailDetails(cocktailName) {
 }
 
 // Function to search cocktails based on the entered alcohol
-function searchCocktails() {
+function searchCocktails(event) {
+  event.preventDefault();
   const searchInput = document.getElementById('searchInput');
   const searchTerm = searchInput.value.trim();
   if (searchTerm === '') {
@@ -79,5 +80,5 @@ function displayCocktails(cocktails) {
 }
 
 // Event listener for the search button click
-const searchBtn = document.getElementById('searchBtn');
-searchBtn.addEventListener('click', searchCocktails);
+const searchForm = document.getElementById('searchForm');
+searchForm.addEventListener('submit', searchCocktails);
