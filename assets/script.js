@@ -41,11 +41,31 @@ function searchCocktails(event) {
       data.drinks.forEach(drink => {
         const cardDetail = createRandomCard(drink);
         document.getElementById('bottom-section').appendChild(cardDetail);
-      })})
+      })
+    })
     .catch(error => {
-      console.error(error);
+      showModal('Error', error.message);
     });
 }
+
+// Function to show the modal
+function showModal(title, message) {
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+
+  modalTitle.textContent = title;
+  modalBody.textContent = message;
+
+  modal.classList.remove('hidden');
+}
+
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.add('hidden');
+}
+
 // this gets fetches the data from all 3 at the same time
 Promise.all([
   fetch(popularDrinks).then(response => response.json()),
@@ -84,84 +104,84 @@ Promise.all([
   })
   //displays errors to console
   .catch(error => {
-    console.error(error);
+    showModal('Error', error.message);
   });
 
 
-function createRandomCard(drink){
-//   // Create the div element with class "divider" and text content
-// const divider = document.createElement('div');
-// divider.className = 'divider';
-// divider.textContent = 'Some recipes';
+function createRandomCard(drink) {
+  //   // Create the div element with class "divider" and text content
+  // const divider = document.createElement('div');
+  // divider.className = 'divider';
+  // divider.textContent = 'Some recipes';
 
-// Create the div element with id "cocktailList" and classes "md:flex", "flex-wrap", "md:flex-row", "sm:flex-col", "justify-between"
-const cocktailList = document.createElement('div');
-cocktailList.id = 'cocktailList';
-cocktailList.className = 'md:flex flex-wrap md:flex-row sm:flex-col justify-between';
+  // Create the div element with id "cocktailList" and classes "md:flex", "flex-wrap", "md:flex-row", "sm:flex-col", "justify-between"
+  const cocktailList = document.createElement('div');
+  cocktailList.id = 'cocktailList';
+  cocktailList.className = 'md:flex flex-wrap md:flex-row sm:flex-col justify-between';
 
-// Create the div element with classes "drink-card", "mb-4", "p-4", "bg-gray-100", "rounded", "flex", "justify-between"
-const drinkCard = document.createElement('div');
-drinkCard.className = 'drink-card mb-4 p-4 bg-gray-100 rounded flex justify-between';
+  // Create the div element with classes "drink-card", "mb-4", "p-4", "bg-gray-100", "rounded", "flex", "justify-between"
+  const drinkCard = document.createElement('div');
+  drinkCard.className = 'drink-card mb-4 p-4 bg-gray-100 rounded flex justify-between';
 
-// Create the div element with class "drink-info"
-const drinkInfo = document.createElement('div');
-drinkInfo.className = 'drink-info';
+  // Create the div element with class "drink-info"
+  const drinkInfo = document.createElement('div');
+  drinkInfo.className = 'drink-info';
 
-// Create the h3 element with classes "text-lg", "font-bold", "mb-2" and set the text content
-const drinkTitle = document.createElement('h3');
-drinkTitle.className = 'text-lg text-center font-bold mb-2';
-drinkTitle.textContent = drink.strDrink;
+  // Create the h3 element with classes "text-lg", "font-bold", "mb-2" and set the text content
+  const drinkTitle = document.createElement('h3');
+  drinkTitle.className = 'text-lg text-center font-bold mb-2';
+  drinkTitle.textContent = drink.strDrink;
 
-// Create the p element with classes "font-bold", "mb-1" and set the text content
-const ingredientsTitle = document.createElement('p');
-ingredientsTitle.className = 'font-bold mb-1';
-ingredientsTitle.textContent = 'Ingredients:';
+  // Create the p element with classes "font-bold", "mb-1" and set the text content
+  const ingredientsTitle = document.createElement('p');
+  ingredientsTitle.className = 'font-bold mb-1';
+  ingredientsTitle.textContent = 'Ingredients:';
 
-// Create the ul element and append li elements with ingredient text content
-const ingredientsList = document.createElement('ul');
-ingredientsList.className = 'pl-6 list-disc';
-// this iterates over the drink data and gets the value of the ingeredients if it exists
-for (let i = 1; i <= 15; i++) {
-  const ingredient = drink['strIngredient' + i];
-  if (ingredient) {
-    const listItem = document.createElement('li');
-    listItem.textContent = ingredient;
-    ingredientsList.appendChild(listItem);
+  // Create the ul element and append li elements with ingredient text content
+  const ingredientsList = document.createElement('ul');
+  ingredientsList.className = 'pl-6 list-disc';
+  // this iterates over the drink data and gets the value of the ingeredients if it exists
+  for (let i = 1; i <= 15; i++) {
+    const ingredient = drink['strIngredient' + i];
+    if (ingredient) {
+      const listItem = document.createElement('li');
+      listItem.textContent = ingredient;
+      ingredientsList.appendChild(listItem);
+    }
   }
-}
 
-const instructionsTitle = document.createElement('p');
+  const instructionsTitle = document.createElement('p');
   instructionsTitle.className = 'font-bold mb-1 font-sans text-md';
   instructionsTitle.textContent = 'Instructions:';
 
   const instructionsText = document.createElement('p');
   instructionsText.textContent = drink.strInstructions;
 
-// Create the div element with class "drink-image"
-const drinkImage = document.createElement('div');
-drinkImage.className = 'drink-image';
+  // Create the div element with class "drink-image"
+  const drinkImage = document.createElement('div');
+  drinkImage.className = 'drink-image';
 
-// Create the img element with src, alt, and class attributes
-const imgElement = document.createElement('img');
-imgElement.src = drink.strDrinkThumb;
-imgElement.alt = drink.strDrink;
-imgElement.className = 'w-full h-auto';
+  // Create the img element with src, alt, and class attributes
+  const imgElement = document.createElement('img');
+  imgElement.src = drink.strDrinkThumb;
+  imgElement.alt = drink.strDrink;
+  imgElement.className = 'w-full h-auto';
 
-// Append the created elements to their respective parents
-drinkInfo.appendChild(drinkTitle);
-drinkInfo.appendChild(ingredientsTitle);
-drinkInfo.appendChild(ingredientsList);
-drinkInfo.appendChild(instructionsTitle);
-drinkInfo.appendChild(instructionsText);
-drinkCard.appendChild(drinkInfo);
-drinkCard.appendChild(drinkImage);
-drinkImage.appendChild(imgElement);
-// cocktailList.appendChild(drinkCard);
+  // Append the created elements to their respective parents
+  drinkInfo.appendChild(drinkTitle);
+  drinkInfo.appendChild(ingredientsTitle);
+  drinkInfo.appendChild(ingredientsList);
+  drinkInfo.appendChild(instructionsTitle);
+  drinkInfo.appendChild(instructionsText);
+  drinkCard.appendChild(drinkInfo);
+  drinkCard.appendChild(drinkImage);
+  drinkImage.appendChild(imgElement);
+  // cocktailList.appendChild(drinkCard);
 
-// Append the elements to the document body
-// document.body.appendChild(divider);
-// document.getElementById('bottom-section').appendChild(cocktailList);
-return drinkCard;
+  // Append the elements to the document body
+  // document.body.appendChild(divider);
+  // document.getElementById('bottom-section').appendChild(cocktailList);
+  return drinkCard;
 }
 // createRandomCard();
 
