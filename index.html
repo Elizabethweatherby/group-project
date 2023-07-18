@@ -15,17 +15,15 @@
 
 <body>
   <section id="top-section">
-    <header class="">
-      <!-- <div class="text-white flex flex-row-reverse mt-6">Find Locations Near me ></div> -->
-      <nav class="nav flex justify-between mt-3 mx-8">
-        <h1 id='logo' class="text-white text-5xl">Cocktailpedia</h1>
-        <form id="searchForm" class="flex text-2xl bg-secondary bg-opacity-25 bg-transparent p-6 space-x-4">
-          <h2 class="text-white">Find Recipes</h2>
-          <input type="text" id="searchInput" class="rounded-3xl" placeholder="Enter an alcohol">
-          <button class="text-white" id="searchBtn">Search</button>
-        </form>
-      </nav>
-    </header>
+    <nav
+      class="nav flex lg:flex-row md:flex-col sm:flex-col ls:flex-col md:justify-between items-center mt-3 ml-2 bg-gray-500 bg-opacity-50 fixed w-full top-0 z-50">
+      <h1 id='logo' class="text-white md:text-5xl sm:text-2xl sm:pt-3">Cocktailpedia</h1>
+      <form id="searchForm" class="flex text-2xl bg-secondary bg-opacity-25 space-x-4 p-6 items-center">
+        <h2 class="text-white ">Find Recipes</h2>
+        <input type="text" id="searchInput" class="rounded-3xl p-2" placeholder=" search by alcohol">
+        <button class="text-white" id="searchBtn">Search</button>
+      </form>
+    </nav>
   </section>
   <section id="bottom-section">
     <div id="cocktailList">

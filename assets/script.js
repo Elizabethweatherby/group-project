@@ -32,7 +32,6 @@ function fetchCocktailDetails(cocktailName) {
       return data.drinks[0];
     });
 }
-
 // Function to search cocktails based on the entered alcohol
 function searchCocktails(event) {
   event.preventDefault();
@@ -67,18 +66,15 @@ function searchCocktails(event) {
       alert('An error occurred while fetching cocktails.');
     });
 }
-
 // Function to display "No cocktails found" message
 function displayNoCocktailsFound() {
   const cocktailList = document.getElementById('cocktailList');
   cocktailList.innerHTML = '<p>No cocktails found.</p>';
 }
-
 // Function to display the retrieved cocktails
 function displayCocktails(cocktails) {
   // The rest of your displayCocktails function remains unchanged
 }
-
 // Event listener for the search button click
 const searchForm = document.getElementById('searchForm');
 searchForm.addEventListener('submit', searchCocktails);
