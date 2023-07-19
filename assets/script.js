@@ -76,6 +76,9 @@ function searchCocktails(event) {
       // Scroll to the divider element with smooth behavior
       const divider = document.querySelector('.divider');
       divider.scrollIntoView({ behavior: 'smooth' });
+
+      // Store the search input value in localStorage
+      localStorage.setItem('searchInputValue', searchInput.value);
     })
     .catch(error => {
       showModal('Error', error.message);
