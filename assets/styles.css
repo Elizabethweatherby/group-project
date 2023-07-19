@@ -1,6 +1,6 @@
 
 .background-image {
-    background-image: url(./images/carosel/delish-mai-tai.jpg);
+    background-image: url(./images/carosel/blue.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -95,6 +95,7 @@ h2,ul{
 @media (max-width:640px) {
   nav{
     flex-direction: column;
+    
   }
   .drink-card{
     flex-direction: column-reverse;
@@ -146,5 +147,49 @@ h2,ul{
 
 .dropdown:hover .dropdown-content {
   display: block;
+  
 } 
+about.abt-background-image {
+  background-image: url('./images/ash-edmonds-96EOKC5d200-unsplash.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  width: 100vh;
+}
 
+.wrapper{
+background-color:transparent;
+margin: 0 auto;
+width: 500px;
+
+}
+.img-smallglass{
+  background-image:url('webdetails/smallglass.jpg') ;
+  background-size: cover;
+  background-position: center;
+  width:300px;
+}
+
+ul {
+margin-left:500px;
+}
+ul li {
+  
+  float: right;
+  color: white;
+  background-color:transparent;
+  display:inline-block;
+}
+
+ul li a{
+display: block;
+text-decoration: none;
+font-family: sans-serif;
+font-size:22px;
+padding:15px;
+color:white;
+}
+
+a:hover{
+  color:red;
+}
