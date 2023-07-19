@@ -24,10 +24,10 @@ let randomDrinkList = document.getElementById('randomDrinks');
 ////////////////////////////////////////////////////////////////////////////////////
 //Define an array of image URLs
 // const images = [
-// './assets/images/carosel/delish-mai-tai.jpg',
-// './assets/images/carosel/cocktail-cherry.jpg',
-// './assets/images/carosel/cocktail.jpg',
-// './assets/images/carosel/blue.jpg',
+//   './assets/images/carosel/delish-mai-tai.jpg',
+//   './assets/images/carosel/cocktail-cherry.jpg',
+//   './assets/images/carosel/cocktail.jpg',
+//   './assets/images/carosel/blue.jpg',
 //   './assets/images/carosel/pexels.jpg'
 // ];
 
