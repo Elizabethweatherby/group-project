@@ -41,7 +41,12 @@ function searchCocktails(event) {
       data.drinks.forEach(drink => {
         const cardDetail = createRandomCard(drink);
         document.getElementById('bottom-section').appendChild(cardDetail);
-      })
+      });
+      const divider = document.querySelector('.divider');
+      divider.scrollIntoView({ behavior: 'smooth' });
+
+      // Store the search input value in localStorage
+      localStorage.setItem('searchInputValue', searchInput.value);
     })
     .catch(error => {
       showModal('Error', error.message);
