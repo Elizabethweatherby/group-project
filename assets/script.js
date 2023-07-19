@@ -68,8 +68,10 @@ function searchCocktails(event) {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      document.getElementById('bottom-section').innerHTML = '';
       data.drinks.forEach(drink => {
         const cardDetail = createRandomCard(drink);
+        
         document.getElementById('bottom-section').appendChild(cardDetail);
       });
 
@@ -164,6 +166,7 @@ Promise.all([
 
 
 function createRandomCard(drink) {
+  console.log("DRINK", drink);
   //   // Create the div element with class "divider" and text content
   // const divider = document.createElement('div');
   // divider.className = 'divider';
