@@ -4,79 +4,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     #map {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       height: 50vh;
-      width:50vw
+      width: 50vw;
+    }
+
+    body {
+      background-color: rgb(48, 45, 45);
+      background-image: url(./images/carosel/pexels.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: white;
     }
   </style>
   <title>Bars:Near Me</title>
 </head>
-
+ <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+ <!-- this is the html section -->
 <body>
+  <div class="flex justify-between mr-7 ml-7 text-4xl">
+    <h1>Bars Near me</h1>
+    <a href="../index.html" class="text-white border-b-4">Home</a>
+  </div>
+  <div class="flex justify-center mt-4">
+    <input id="locationInput" type="text" placeholder="Enter your location"
+      class="border rounded px-4 py-2 focus:outline-none focus:ring focus:border-blue-300">
+    <button id="searchButton" class="bg-blue-500 text-white px-4 py-2 ml-2 rounded">Search</button>
+  </div>
   <div id="map"></div>
 
+  <div id="errorModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+    <div class="bg-white w-1/2 p-6 rounded shadow-lg">
+      <div class="mb-4">
+        <h5 class="text-xl font-bold">Error</h5>
+      </div>
+      <div class="mb-6">
+        <p id="errorMessage"></p>
+      </div>
+      <div class="text-right">
+        <button id="closeModalButton" class="px-4 py-2 rounded bg-gray-500 text-white">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- within this is the script for the map -->
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
+    // Create map and set the initial view
     var map = L.map('map').setView([0, 0], 13);
 
+    //Add the OpenStreetMap tile layer to the map
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Get the user's location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
+    // Get references to the search button and location input element
+    var searchButton = document.getElementById('searchButton');
+    var locationInput = document.getElementById('locationInput');
 
-        // Update the map view to the user's location
-        map.setView([latitude, longitude], 13);
+    // Attach an event listener to the search button
+    searchButton.addEventListener('click', function () {
+      var location = locationInput.value;
+      if (location !== '') {
+        searchDrinkLocations(location);
+      }
+    });
 
-        // Add a marker at the user's location
-        L.marker([latitude, longitude]).addTo(map).bindPopup('Your Location');
+    // Function to search for drink locations near location
+    function searchDrinkLocations(location) {
+      // geocoding URL using OpenStreetMap API
+      var geocodeUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${location}`;
 
-        // Search for nearby drink locations
-        searchDrinkLocations(latitude, longitude);
-      }, function(error) {
-        console.error('Error getting user location:', error);
-      });
-    } else {
-      console.error('Geolocation is not supported by this browser.');
+      // Send a GET request to the geocoding URL
+      fetch(geocodeUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            // Extract latitude and longitude from the geocoding response
+            var latitude = parseFloat(data[0].lat);
+            var longitude = parseFloat(data[0].lon);
+
+            // Set the map view to the specified location
+            map.setView([latitude, longitude], 13);
+
+            // Add a marker at the specified location
+            L.marker([latitude, longitude]).addTo(map).bindPopup('Your Location');
+
+            // Search for nearby drink locations using Overpass API
+            searchNearbyDrinkLocations(latitude, longitude);
+          } else {
+            displayError('Location not found.');
+          }
+        })
+        .catch(error => {
+          displayError('Error geocoding location: ' + error);
+        });
     }
 
-    function searchDrinkLocations(latitude, longitude) {
+    // Function to search for nearby drink locations using Overpass API
+    function searchNearbyDrinkLocations(latitude, longitude) {
+      // Define the Overpass query to find bars and pubs within a certain radius
       var query = `
-        [out:json];
-        (
-          node["amenity"="bar"](around:6000,${latitude},${longitude});
-          node["amenity"="pub"](around:6000,${latitude},${longitude});
-        );
-        out;
-      `;
+    [out:json];
+    (
+      node["amenity"="bar"](around:6000,${latitude},${longitude});
+      node["amenity"="pub"](around:6000,${latitude},${longitude});
+    );
+    out;
+  `;
 
       var url = 'https://overpass-api.de/api/interpreter';
+
       var params = {
         method: 'POST',
-        body: query
+        body: query,
+        headers: {
+          'Content-Type': 'text/plain',
+          'Accept': 'application/json'
+        }
       };
 
+      //send a POST request to the Overpass API with the query
       fetch(url, params)
         .then(response => response.json())
         .then(data => {
+          // Process the response and add markers for the drink locations
           var drinkLocations = data.elements;
           drinkLocations.forEach(location => {
-            var marker = L.marker([location.lat, location.lon]).addTo(map);
-            marker.bindPopup(location.tags.name || 'Unnamed Drink Location');
+            let marker = L.marker([location.lat, location.lon]).addTo(map);
+            marker.bindPopup(location.tags.name || 'Drink Location');
           });
         })
         .catch(error => {
-          console.error('Error:', error);
+          displayError('Error: ' + error);
         });
     }
+
+    // Function to display an error message in a modal
+    function displayError(message) {
+      var errorMessageElement = document.getElementById('errorMessage');
+      errorMessageElement.textContent = message;
+
+      var modal = document.getElementById('errorModal');
+      modal.classList.remove('hidden');
+
+      var closeModalButton = document.getElementById('closeModalButton');
+      closeModalButton.addEventListener('click', function () {
+        modal.classList.add('hidden');
+      });
+    }
+
+
   </script>
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </body>
 
 </html>

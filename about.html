@@ -9,31 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
     <title>Cocktailpedia</title>
 </head>
 
-<body class="background-image">
+<body id="aboutUsBody">
     <!-- this section is for navigation -->
     <section id="top-section">
         <!-- essentially the nav bar should be fixed top the top and houses the dropdown menus for the drinks -->
         <nav
             class="nav flex lg:flex-row md:flex-col sm:flex-col ls:flex-col md:justify-between items-center mt-3 ml-2 bg-gray-500 bg-opacity-50 fixed w-full top-0 z-50">
             <h1 id='logo' class="text-white md:text-5xl sm:text-2xl sm:pt-3">Cocktailpedia</h1>
-            <div class="wrapper">
-                <div class="abouttab">
-                    <ul id="abouttabhyperlink">
-                        <li> <a href="index.html">Home</a></li>
-                        <li> <a href="about.html">About Us</a></li>
-                        <!-- <li> <a href="something.html">Something else</a></li> -->
-                    </ul>
-                </div>
-            </div>
+            <ul id="abouttabhyperlink" class=" flex gap-x-3 mr-7 text-white">
+                <li> <a href="index.html">Home</a></li>
+            </ul>
         </nav>
-        <div class="wrapper">
-            <div style="margin-top:100px; color:white;">
+        <div class="wrapper flex justify-center">
+            <div style="margin-top:100px; color:white;width: 50%; text-align: center;">
                 <h2 style="font-size:30px; color:white;text-align:center; ">About Us</h2>
                 Here at Cocktailpedia, we believe a delicious drink can make any event better.
                 Our website is your go to source for finding a variety of fun and delectable

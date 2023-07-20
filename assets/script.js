@@ -1,4 +1,3 @@
-
 //note: this is all things that the api allows us to do. By putting them in a const var then 
 // we can access them whenever. Also it allows for easy switching between search criteria
 ////////////////////////////////////////////////////////////////////////////////////
