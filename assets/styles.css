@@ -12,12 +12,12 @@
 .listItem:hover{
   color: black;
 }
-.location-icon {
+#location-icon {
   position: relative;
   display: inline-block;
 }
 
-.location-icon:hover::after {
+#location-icon:hover::after {
   content: 'Display locations near me';
   position: absolute;
   top: -20px;
