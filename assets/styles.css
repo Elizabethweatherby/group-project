@@ -1,17 +1,18 @@
-
 .background-image {
-    background-image: url(./images/carosel/blue.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
+  background-image: url(./images/carosel/blue.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
-.listItem:hover{
+
+.listItem:hover {
   color: black;
 }
+
 .location-icon {
   position: relative;
   display: inline-block;
@@ -29,30 +30,38 @@
   border-radius: 3px;
   white-space: nowrap;
 }
-#logo{
-  font-family:'Lugrasimo', cursive;;
+
+#logo {
+  font-family: 'Lugrasimo', cursive;
+  ;
 }
 
-input{
+input {
   margin-left: 10px;
 }
-h2,ul{
+
+h2,
+ul {
   font-family: 'Oswald', sans-serif;
 }
-.divider{
+
+.divider {
   background-color: orange;
   text-align: center;
   font-size: 20px;
   font-weight: 500;
   color: #fff;
 }
-#top-section{
+
+#top-section {
   height: 100vh;
 }
-#bottom-section{
+
+#bottom-section {
   width: 100%;
   background-color: black;
 }
+
 #cocktailList {
   display: flex;
   flex-wrap: wrap;
@@ -71,37 +80,45 @@ h2,ul{
 }
 
 .drink-info {
-  flex: 0 1 70%;  /* Takes up to 70% of the space */
+  flex: 0 1 70%;
+  /* Takes up to 70% of the space */
 }
 
 .drink-image {
-  flex: 0 1 30%;  /* Takes up to 30% of the space */
+  flex: 0 1 30%;
+  /* Takes up to 30% of the space */
 }
 
 .drink-image img {
   width: 100%;
   height: auto;
-} 
+}
+
 @media (max-width:640px) {
-  nav{
+  nav {
     flex-direction: column;
   }
-  .drink-card{
+
+  .drink-card {
     flex-direction: column-reverse;
   }
 }
 
 @media (min-width:640px) and (max-width: 769px) {
-  .drink-card{
+  .drink-card {
     flex-direction: column-reverse;
   }
+
   /* .drink-image img {
-    position: absolute;
-    left: 400px;
-    height: 25%;
-    width: 40%;
-  }  */
+  position: absolute;
+  left: 400px;
+  height: 25%;
+  width: 40%;
+}  */
 }
+
+
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -136,5 +153,40 @@ h2,ul{
 
 .dropdown:hover .dropdown-content {
   display: block;
-} 
+}
+
+.wrapper {
+  background-color: transparent;
+  margin: 0 auto;
+  width: 850px;
+
+}
+
+
+
+ul {
+  margin-left: 500px;
+  float: right;
+}
+
+ul li {
+  color: white;
+  background-color: transparent;
+  display: inline-block;
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 25px;
+  padding: 15px;
+  color: white;
+}
+
+a:hover {
+
+  color: black;
+
+}
 
