@@ -22,36 +22,8 @@ let popularDrinkList = document.getElementById('popularDrinks');
 let latestDrinkList = document.getElementById('latestDrinks');
 let randomDrinkList = document.getElementById('randomDrinks');
 ////////////////////////////////////////////////////////////////////////////////////
-//Define an array of image URLs
-// const images = [
-//   './assets/images/carosel/delish-mai-tai.jpg',
-//   './assets/images/carosel/cocktail-cherry.jpg',
-//   './assets/images/carosel/cocktail.jpg',
-//   './assets/images/carosel/blue.jpg',
-//   './assets/images/carosel/pexels.jpg'
-// ];
+//note: this section is the main section. it searches for the drinks.
 
-
-
-// const backgroundImage = document.querySelector(".background-image");
-// const nextButtonRight = document.getElementById("next-button-right");
-
-// let currentIndex = 0;
-
-// function changeBackgroundImage() {
-//   backgroundImage.style.backgroundImage = `url(${images[currentIndex]})`;
-// }
-
-// function nextImage() {
-//   currentIndex = (currentIndex + 1) % images.length;
-//   changeBackgroundImage();
-// }
-
-// nextButtonRight.addEventListener("click", nextImage);
-
-
-// // Call the function initially
-// changeBackgroundImage();
 
 // Event listener for the search button click
 const searchForm = document.getElementById('searchForm');
@@ -71,7 +43,7 @@ function searchCocktails(event) {
       document.getElementById('bottom-section').innerHTML = '';
       data.drinks.forEach(drink => {
         const cardDetail = createRandomCard(drink);
-        
+
         document.getElementById('bottom-section').appendChild(cardDetail);
       });
 
@@ -86,6 +58,8 @@ function searchCocktails(event) {
       showModal('Error', error.message);
     });
 }
+////////////////////////////////////////////////////////////////////////////////////
+
 
 // Function to show the modal
 function showModal(title, message) {
@@ -122,6 +96,9 @@ function closeModal() {
   const modal = document.getElementById('modal');
   modal.classList.add('hidden');
 }
+////////////////////////////////////////////////////////////////////////////////////
+//note: this section is for the dropdown menus. It uses gets the popular, letest and random drinks
+
 
 // this gets fetches the data from all 3 at the same time
 Promise.all([
@@ -138,16 +115,67 @@ Promise.all([
       let drinkList = document.createElement('li');
       //writes the value of the array
       drinkList.textContent = popularData.drinks[i].strDrink;
+      drinkList.addEventListener('mouseover', function () {
+        // change background color on mouse over
+        this.style.backgroundColor = 'lightgray';
+        this.style.color = 'black';
+      });
+
+      drinkList.addEventListener('mouseout', function () {
+        // reset background color on mouse out
+        this.style.backgroundColor = '';
+        this.style.color = '';
+      });
+      drinkList.addEventListener('click', function () {
+        // Clear previous search results
+        let bottomSection = document.getElementById('bottom-section');
+        bottomSection.innerHTML = '';
+
+        // Create a new card for the clicked drink
+        let card = createRandomCard(popularData.drinks[i]);
+        bottomSection.appendChild(card);
+
+        console.log("Clicked on", popularData.drinks[i].strDrink);
+        // Scroll to the divider element with smooth behavior
+        const divider = document.querySelector('.divider');
+        divider.scrollIntoView({ behavior: 'smooth' });
+      });
       //adds to the list
       popularList.appendChild(drinkList);
     }
-
     // Display latest drinks
     let latestList = document.getElementById('latestDrinks');
     //uses for.. of loop to iterate over data and assign it to drink variable on each iteration
     for (let drink of latestData.drinks) {
       let drinkList = document.createElement('li');
       drinkList.textContent = drink.strDrink;
+      drinkList.addEventListener('mouseover', function () {
+        // change background color on mouse over
+        this.style.backgroundColor = 'lightgray';
+        this.style.color = 'black';
+      });
+
+      drinkList.addEventListener('mouseout', function () {
+        // reset background color on mouse out
+        this.style.backgroundColor = '';
+        this.style.color = '';
+      });
+      // Add click event listener to each list item
+      drinkList.addEventListener('click', function () {
+        // Clear previous search results
+        let bottomSection = document.getElementById('bottom-section');
+        bottomSection.innerHTML = '';
+
+        // Create a new card for the clicked drink
+        let card = createRandomCard(drink);
+        bottomSection.appendChild(card);
+
+        console.log("Clicked on", drink.strDrink);
+        // Scroll to the divider element with smooth behavior
+        const divider = document.querySelector('.divider');
+        divider.scrollIntoView({ behavior: 'smooth' });
+    });
+
       latestList.appendChild(drinkList);
     }
 
@@ -156,6 +184,31 @@ Promise.all([
     for (let drink of randomData.drinks) {
       let drinkList = document.createElement('li');
       drinkList.textContent = drink.strDrink;
+      drinkList.addEventListener('mouseover', function () {
+        // change background color on mouse over
+        this.style.backgroundColor = 'lightgray';
+        this.style.color = 'black';
+      });
+
+      drinkList.addEventListener('mouseout', function () {
+        // reset background color on mouse out
+        this.style.backgroundColor = '';
+        this.style.color = '';
+      });
+      drinkList.addEventListener('click', function () {
+        // Clear previous search results
+        let bottomSection = document.getElementById('bottom-section');
+        bottomSection.innerHTML = '';
+
+        // Create a new card for the clicked drink
+        let card = createRandomCard(drink);
+        bottomSection.appendChild(card);
+
+        console.log("Clicked on", drink.strDrink);
+        // Scroll to the divider element with smooth behavior
+        const divider = document.querySelector('.divider');
+        divider.scrollIntoView({ behavior: 'smooth' });
+      });
       randomList.appendChild(drinkList);
     }
   })
@@ -164,13 +217,11 @@ Promise.all([
     showModal('Error', error.message);
   });
 
+////////////////////////////////////////////////////////////////////////////////////
+//note: this section is the second most important. It creates the card the user will be looking at for the info the searched for. This 
+// get called for all things drinks in the site. 
 
 function createRandomCard(drink) {
-  console.log("DRINK", drink);
-  //   // Create the div element with class "divider" and text content
-  // const divider = document.createElement('div');
-  // divider.className = 'divider';
-  // divider.textContent = 'Some recipes';
 
   // Create the div element with id "cocktailList" and classes "md:flex", "flex-wrap", "md:flex-row", "sm:flex-col", "justify-between"
   const cocktailList = document.createElement('div');
@@ -241,7 +292,6 @@ function createRandomCard(drink) {
   // document.getElementById('bottom-section').appendChild(cocktailList);
   return drinkCard;
 }
-// createRandomCard();
 
 
 

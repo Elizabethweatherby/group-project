@@ -8,21 +8,10 @@
     width: 100vw;
     margin: 0;
     padding: 0;
-    /* transition: background-image 0.5s ease-in-out; */
 }
-/* #next-button-right {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #000;
-} */
-
+.listItem:hover{
+  color: black;
+}
 #logo{
   font-family:'Lugrasimo', cursive;;
 }
@@ -76,22 +65,6 @@ h2,ul{
   width: 100%;
   height: auto;
 } 
-
-/* this makes the cards the same as the lg version just more for small screens */
-/* @media (max-width: 640px){
-  .drink-card {
-    flex-direction: row;
-  }
-
-  .drink-info, .drink-image {
-    width: 50%;
-    height: auto;
-  }
-
-  .drink-image {
-    padding-bottom: 0;
-  }
-} */
 @media (max-width:640px) {
   nav{
     flex-direction: column;
