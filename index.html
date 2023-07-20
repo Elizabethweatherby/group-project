@@ -2,90 +2,85 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
-  <title>Cocktailpedia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <title>Cocktailpedia</title>
 </head>
 
 <body class="background-image">
-  <!-- Modal -->
-  <div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-    <div class="bg-white p-4 rounded-lg shadow-lg">
-      <div id="modalTitle" class="text-lg font-bold mb-2"></div>
-      <div id="modalBody"></div>
-      <div class="mt-4 text-right">
-        <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="closeModal()">Close</button>
-      </div>
+    <!-- Modal -->
+    <div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white p-4 rounded-lg shadow-lg">
+            <div id="modalTitle" class="text-lg font-bold mb-2"></div>
+            <div id="modalBody"></div>
+            <div class="mt-4 text-right">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                    onclick="closeModal()">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
-  <!-- this section is for navigation -->
-  <section id="top-section">
-
-    <!-- essentially the nav bar should be fixed top the top and houses the dropdown menus for the drinks -->
-    <nav
-      class="nav flex lg:flex-row md:flex-col sm:flex-col ls:flex-col md:justify-between items-center mt-3 ml-2 bg-gray-500 bg-opacity-50 fixed w-full top-0 z-50">
-      <h1 id='logo' class="text-white md:text-5xl sm:text-2xl sm:pt-3">Cocktailpedia</h1>
-      <body  class="background-image">
-<div class="wrapper">
-        <div class="abouttab"> 
-          <ul id="abouttabhyperlink">
-            <li> <a href="webdetails/about.html">About Us</a> </li>
-            <li> <a href="webdetails/something.html">Something else</a> </li>
-          </ul>
-        </div>
-      </div>
-      <form id="searchForm" class="flex text-2xl bg-secondary bg-opacity-25 space-x-4 p-6 items-center">
-        <div class="text-white flex gap-x-3">
-          <!-- first dropdown -->
-          <div class="dropdown">
-            <button class="dropbtn">Popular <i class="caret fa-solid fa-caret-down" style="color: white;"></i></button>
-            <div class="dropdown-content">
-              <ul id="popularDrinks" class="flex flex-col">
-              </ul>
+    <!-- this section is for navigation -->
+    <section id="top-section">
+        <!-- essentially the nav bar should be fixed top the top and houses the dropdown menus for the drinks -->
+        <nav
+            class="nav flex lg:flex-row md:flex-col sm:flex-col ls:flex-col md:justify-between items-center mt-3 ml-2 bg-gray-500 bg-opacity-50 fixed w-full top-0 z-50">
+            <h1 id='logo' class="text-white md:text-5xl sm:text-2xl sm:pt-3">Cocktailpedia</h1>
+            <div class="wrapper">
+                <div class="abouttab">
+                    <ul id="abouttabhyperlink">
+                        <li> <a href="about.html">About Us</a> </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <!-- second dropdown -->
-          <div class="dropdown">
-            <button class="dropbtn">Latest <i class="fa-solid fa-caret-down" style="color: white;"></i></button>
-            <div class="dropdown-content">
-              <ul id="latestDrinks">
-                <li></li>
-              </ul>
-            </div>
-          </div>
-          <!-- third dropdown -->
-          <div class="dropdown">
-            <button class="dropbtn">Not sure? <i class="fa-solid fa-caret-down" style="color: white;"></i></button>
-            <div class="dropdown-content">
-              <ul id="randomDrinks">
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <input type="text" id="searchInput" class="rounded-3xl p-2" placeholder="search by keyword ">
-      </form>
-    </nav>
-    <button id="next-button-left">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <button id="next-button-right">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </section>
-  <div class="divider">Some recipies</div>
-  <!-- the bottom section stores random drinks -->
-  <section id="bottom-section">
-    <!-- the cards for random drinks will go here -->
-  </section>
-  <script src="https://kit.fontawesome.com/9cca718ac3.js" crossorigin="anonymous"></script>
-  <script src="./assets/script.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+            <form id="searchForm" class="flex text-2xl bg-secondary bg-opacity-25 space-x-4 p-6 items-center">
+                <div class="text-white flex gap-x-3">
+                    <!-- first dropdown -->
+                    <div class="dropdown">
+                        <button class="dropbtn">Popular <i class="caret fa-solid fa-caret-down"
+                                style="color: white;"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="popularDrinks" class="flex flex-col">
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- second dropdown -->
+                    <div class="dropdown">
+                        <button class="dropbtn">Latest <i class="fa-solid fa-caret-down"
+                                style="color: white;"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="latestDrinks">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- third dropdown -->
+                    <div class="dropdown">
+                        <button class="dropbtn">Not sure? <i class="fa-solid fa-caret-down"
+                                style="color: white;"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="randomDrinks">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <input type="text" id="searchInput" class="rounded-3xl p-2" placeholder="search by keyword ">
+            </form>
+        </nav>
+    </section>
+    <div class="divider">Some recipies</div>
+    <!-- the bottom section stores random drinks -->
+    <section id="bottom-section">
+        <!-- the cards for random drinks will go here -->
+    </section>
+    <script src="https://kit.fontawesome.com/9cca718ac3.js" crossorigin="anonymous"></script>
+    <script src="./assets/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 
 </html>

@@ -22,37 +22,6 @@ let popularDrinkList = document.getElementById('popularDrinks');
 let latestDrinkList = document.getElementById('latestDrinks');
 let randomDrinkList = document.getElementById('randomDrinks');
 ////////////////////////////////////////////////////////////////////////////////////
-//Define an array of image URLs
-// const images = [
-//   './assets/images/carosel/delish-mai-tai.jpg',
-//   './assets/images/carosel/cocktail-cherry.jpg',
-//   './assets/images/carosel/cocktail.jpg',
-//   './assets/images/carosel/blue.jpg',
-//   './assets/images/carosel/pexels.jpg'
-// ];
-
-
-
-// const backgroundImage = document.querySelector(".background-image");
-// const nextButtonRight = document.getElementById("next-button-right");
-
-// let currentIndex = 0;
-
-// function changeBackgroundImage() {
-//   backgroundImage.style.backgroundImage = `url(${images[currentIndex]})`;
-// }
-
-// function nextImage() {
-//   currentIndex = (currentIndex + 1) % images.length;
-//   changeBackgroundImage();
-// }
-
-// nextButtonRight.addEventListener("click", nextImage);
-
-
-// // Call the function initially
-// changeBackgroundImage();
-
 //note: this section is the main section. it searches for the drinks.
 
 
@@ -323,6 +292,3 @@ function createRandomCard(drink) {
   // document.getElementById('bottom-section').appendChild(cocktailList);
   return drinkCard;
 }
-
-
-
