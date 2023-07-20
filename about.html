@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+    <title>Cocktailpedia</title>
+</head>
+
+<body class="background-image">
+    
+    <!-- this section is for navigation -->
+    <section id="top-section">
+        <!-- essentially the nav bar should be fixed top the top and houses the dropdown menus for the drinks -->
+        <nav
+            class="nav flex lg:flex-row md:flex-col sm:flex-col ls:flex-col md:justify-between items-center mt-3 ml-2 bg-gray-500 bg-opacity-50 fixed w-full top-0 z-50">
+            <h1 id='logo' class="text-white md:text-5xl sm:text-2xl sm:pt-3">Cocktailpedia</h1>
+
+            <div class="wrapper">
+                <div class="abouttab">
+                    <ul id="abouttabhyperlink">
+                        <li> <a href="index.html">Home</a></li>
+                        <li> <a href="about.html">About Us</a></li>
+                        <!-- <li> <a href="something.html">Something else</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <form id="searchForm" class="flex text-2xl bg-secondary bg-opacity-25 space-x-4 p-6 items-center">
+                <div class="text-white flex gap-x-3">
+                    <!-- first dropdown -->
+                    <div class="dropdown">
+                        <button class="dropbtn">Popular <i class="caret fa-solid fa-caret-down"
+                                style="color: white;"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="popularDrinks" class="flex flex-col">
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- second dropdown -->
+                    <div class="dropdown">
+                        <button class="dropbtn">Latest <i class="fa-solid fa-caret-down"
+                                style="color: white;"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="latestDrinks">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- third dropdown -->
+                    <div class="dropdown">
+                        <button class="dropbtn">Not sure? <i class="fa-solid fa-caret-down"
+                                style="color: white;"></i></button>
+                        <div class="dropdown-content">
+                            <ul id="randomDrinks">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <input type="text" id="searchInput" class="rounded-3xl p-2" placeholder="search by keyword "> -->
+            </form>
+        </nav>
+       
+        <div class="wrapper">
+           
+            <div style="margin-top:100px; color:white;">
+                <h2 style="font-size:30px; color:white;text-align:center; ">About Us</h2>
+                Here at Cocktailpedia, we believe a delicious drink can make any event better.
+                Our website is your go to source for finding a variety of fun and delectable 
+                alcohol-based recipes, whether youre throwing a part, commemorating a particular occasion,
+                 or just unwinding after a long day.
+
+                 <h3 style="font-size:25px;text-align:center;">Our Recipes:</h3>
+                 At Mixology Delights, we're proud of our extensive and constantly expanding recipe library. 
+                 We provide a variety of drinks for every taste, from time-honored classics to cutting-edge combinations. 
+                 Our team scours the globe for the finest ingredients and the latest trends in mixology to ensure you
+                  have access to the best and most exciting drink options available.
+<p>Each recipe on our website is handcrafted, tested, and reviewed by our team, guaranteeing that you'll
+     experience the perfect blend of flavors and textures every time you mix one up. Whether you're a seasoned
+     bartender or a complete novice, our step-by-step instructions and helpful tips will make your mixology
+      journey seamless and enjoyable.</p>
+               
+            </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/9cca718ac3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>
