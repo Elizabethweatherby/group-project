@@ -12,6 +12,23 @@
 .listItem:hover{
   color: black;
 }
+.location-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.location-icon:hover::after {
+  content: 'Display locations near me';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
 #logo{
   font-family:'Lugrasimo', cursive;;
 }

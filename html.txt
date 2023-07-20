@@ -1,0 +1,25 @@
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+
+<nav>
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+    <div>
+      <input id="search-input" type="text" placeholder="Search Movie">
+      <button id="search-button" onclick="searchMovie()">Search</button>
+    </div>
+    <div id="map"></div>
+  </nav>
+  <main>
+    <section>
+      This section is for displaying movie info
+    </section>
+    <section>
+      
+    </section>
+  </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="./script.js"></script>
