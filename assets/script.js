@@ -292,6 +292,3 @@ function createRandomCard(drink) {
   // document.getElementById('bottom-section').appendChild(cocktailList);
   return drinkCard;
 }
-
-
-
